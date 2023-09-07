@@ -1,0 +1,44 @@
+version: 1
+default_environment: dev
+project_id: 7bf0dece-78e5-4824-a952-a586bfa1fd95
+environments:
+- name: dev
+- name: staging
+- name: prod
+
+plugins:
+  extractors:
+  - name: tap-mysql
+    variant: transferwise
+    pip_url: pipelinewise-tap-mysql
+    config:
+      database: mydb
+    # metadata:
+    #   '*':
+    #     replication-method: LOG_BASED  # LOG_BASED, INCREMENTAL, INCREMENTAL
+  - name: mydb
+    inherit_from: tap-mysql
+    config:
+      user: root
+    select:
+    - mydb-customers.*
+    - mydb-products.*
+    - mydb-orders.*
+
+  loaders:
+  - name: target-postgres
+    variant: transferwise
+    pip_url: pipelinewise-target-postgres
+  mappers:
+  - name: meltano-map-transformer
+    variant: meltano
+    pip_url: git+https://github.com/MeltanoLabs/meltano-map-transform.git
+    mappings:
+    - name: mydb-transformtion
+      config:
+        stream_maps:
+          mydb-customers:
+            email: str(email)[:2].ljust(6,'*')+str(email)[-2:]
+            first_name: md5(str(first_name))
+            last_name: md5(str(last_name))
+            phone_number: str(mobile_number)[:2].ljust(6,'*')+str(mobile_number)[-2:]

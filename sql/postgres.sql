@@ -1,0 +1,5 @@
+CREATE DATABASE warehouse;
+
+/*
+DROP SCHEMA mydb CASCADE;
+*/
