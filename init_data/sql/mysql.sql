@@ -51,5 +51,5 @@ INSERT INTO orders (customer_id, product_id, order_date, count_of_product, total
 VALUES
     (1, 1, '2023-01-15', 2, 1799.98),  -- Two laptops
     (1, 2, '2023-01-15', 1, 699.99),   -- One smartphones
-    (2, 2, '2023-02-10', 3, 2099.97),  -- Three smartphones
-    (3, 3, '2023-03-20', 1, 149.99);    -- One desk chair
+    (2, 2, '2023-01-16', 3, 2099.97),  -- Three smartphones
+    (3, 3, '2023-03-17', 1, 149.99);    -- One desk chair

@@ -9,7 +9,7 @@ The lower case `t` here means that doing some simple tranformation such as de-id
 - Transformation Tool : dbt
 - Visualization : metabase
 
-# Steps
+# Preparation
 
 ## Launch databases
 We launch two databases in this lab. One is MySQL as our raw data source, and another one is postgres acting as data warehouse.
@@ -81,10 +81,23 @@ cd transformation
 dbt debug
 # should show -> 13:41:27  All checks passed!
 
+# install dbt depedencies
+dbt deps
+ ```
+
+run dbt to generate models and lineage diagram
+```sh
+dbt run
+dbt docs generate
+dbt docs serve
+```
+
+Other Command
+```sh
 dbt seed
 dbt snapshot
-dbt run
- ```
+```
+
 
 
 # Appedix

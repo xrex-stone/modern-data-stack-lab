@@ -1,0 +1,13 @@
+
+version: 2
+
+models:
+  - name: aggregate_orders_per_day
+    description: "Aggregate count of records and total ordering amount from orders"
+    columns:
+      - name: event_date
+        description: "The date the record happened"
+      - name: count_of_record
+        description: "Count the records per date"
+      - name: total_amount
+        description: "Sum up the records' total amount per date"

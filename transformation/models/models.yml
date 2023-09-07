@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: mydb
+    database: warehouse
+    schema: mydb
+    tables:
+      - name: customers
+      - name: products
+      - name: orders
