@@ -91,6 +91,8 @@ dbt run
 dbt docs generate
 dbt docs serve
 ```
+The dbt lineage diagram
+![Alt text](/images/dbt_lineage.png)
 
 Other Command
 ```sh
