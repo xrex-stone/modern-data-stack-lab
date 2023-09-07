@@ -13,9 +13,9 @@ plugins:
     pip_url: pipelinewise-tap-mysql
     config:
       database: mydb
-    # metadata:
-    #   '*':
-    #     replication-method: LOG_BASED  # LOG_BASED, INCREMENTAL, INCREMENTAL
+    metadata:
+      '*':
+        replication-method: FULL_TABLE  # LOG_BASED, INCREMENTAL, FULL_TABLE
   - name: mydb
     inherit_from: tap-mysql
     config:
@@ -29,6 +29,7 @@ plugins:
   - name: target-postgres
     variant: transferwise
     pip_url: pipelinewise-target-postgres
+
   mappers:
   - name: meltano-map-transformer
     variant: meltano
@@ -41,4 +42,4 @@ plugins:
             email: str(email)[:2].ljust(6,'*')+str(email)[-2:]
             first_name: md5(str(first_name))
             last_name: md5(str(last_name))
-            phone_number: str(mobile_number)[:2].ljust(6,'*')+str(mobile_number)[-2:]
+            phone_number: str(phone_number)[:2].ljust(6,'*')+str(phone_number)[-2:]

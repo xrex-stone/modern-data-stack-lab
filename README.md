@@ -36,6 +36,8 @@ meltano install
 
 # rename .env.sample to .env in ./extrac_load and make sure if database variables is correct
 meltano run mydb target-postgres
+# add mydb-transformtion in pipeline to see what's different in warehouse
+meltano run mydb mydb-transformtion target-postgres
 
 ```
 
