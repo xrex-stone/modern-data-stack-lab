@@ -98,7 +98,13 @@ dbt seed
 dbt snapshot
 ```
 
-
+## Launch Metabase
+1. browse http://127.0.0.1:3000
+2. set login fields
+3. set date warehouse connection
+4. enter Metabase
+5. drop the data and draw a dashboard, finally, it looks like:
+![Alt text](/images/metabase.png)
 
 # Appedix
 
