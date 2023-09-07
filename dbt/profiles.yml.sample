@@ -1,0 +1,24 @@
+transformation:
+  outputs:
+
+    dev:
+      type: postgres
+      threads: 1
+      host: 127.0.0.1
+      port: 5432
+      user: postgres
+      pass: postgres
+      dbname: warehouse
+      schema: ''
+
+    prod:
+      type: postgres
+      threads: [1 or more]
+      host: [host]
+      port: [port]
+      user: [prod_username]
+      pass: [prod_password]
+      dbname: [dbname]
+      schema: [prod_schema]
+
+  target: dev
