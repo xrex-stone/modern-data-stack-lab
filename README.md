@@ -108,7 +108,7 @@ dbt snapshot
 5. drop the data and draw a dashboard, finally, it looks like:
 ![Alt text](/images/metabase.png)
 
-# Appedix
+# Appendix
 
 - install meltano : https://docs.meltano.com/guide/installation-guide/
 - install dbt-postgres : https://docs.getdbt.com/docs/core/pip-install
