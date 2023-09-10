@@ -33,6 +33,8 @@ docker-compose up -d
 docker-compose ps
 ```
 
+Respectively execute `init_data/sql/mysql.sql` in MySql and  `init_data/sql/postgres.sql` in Postgres to initialize data.
+
 ## Launch Extract and Load Process
 We use meltano as our EL tool.
 
