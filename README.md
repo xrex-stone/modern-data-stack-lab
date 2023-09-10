@@ -2,15 +2,16 @@
 Adopt EtLT (**Extrac, Load, Tranformation**) methodology to process data.
 The lower case `t` here means that doing some simple tranformation such as de-identification, chaning types, etc.
 
-Architecture Diagram
-![Alt text](/images/architecture.png)
-
 # Tech Stack
 - Source Database : Mysql
 - Data Warehouse : Postgres
 - Extract Load Tool : meltano
 - Transformation Tool : dbt
 - Visualization : metabase
+
+
+Architecture Diagram
+![Alt text](/images/architecture.png)
 
 # Scenario
 This is a traditional order service. A customer can buy one more products in the system. There are three main tables : 
