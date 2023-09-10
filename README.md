@@ -9,6 +9,15 @@ The lower case `t` here means that doing some simple tranformation such as de-id
 - Transformation Tool : dbt
 - Visualization : metabase
 
+# Use Case
+This is a traditional order service. A customer can buy one more products in the system. There are three main tables : 
+- customers : customer basic information.
+- products : product information.
+- orders : the order factor keeps the relationship between customers and products.
+
+Entity Relationship Diagram
+![Alt text](/images/ERD.png)
+
 # Preparation
 
 ## Launch databases
