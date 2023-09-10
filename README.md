@@ -2,6 +2,9 @@
 Adopt EtLT (**Extrac, Load, Tranformation**) methodology to process data.
 The lower case `t` here means that doing some simple tranformation such as de-identification, chaning types, etc.
 
+Architecture Diagram
+![Alt text](/images/architecture.png)
+
 # Tech Stack
 - Source Database : Mysql
 - Data Warehouse : Postgres
@@ -9,7 +12,7 @@ The lower case `t` here means that doing some simple tranformation such as de-id
 - Transformation Tool : dbt
 - Visualization : metabase
 
-# Use Case
+# Scenario
 This is a traditional order service. A customer can buy one more products in the system. There are three main tables : 
 - customers : customer basic information.
 - products : product information.
@@ -17,6 +20,8 @@ This is a traditional order service. A customer can buy one more products in the
 
 Entity Relationship Diagram
 ![Alt text](/images/ERD.png)
+
+We will build our BI dashboard based on this scenario.
 
 # Preparation
 
