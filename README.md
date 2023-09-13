@@ -35,9 +35,31 @@ docker-compose ps
 
 Respectively execute `init_data/sql/mysql.sql` in MySql and  `init_data/sql/postgres.sql` in Postgres to initialize data.
 
-## Launch Extract and Load Process
+## Launch Extract and Load Process (meltano)
 We use meltano as our EL tool.
 
+```sh
+cd extract_load
+```
+
+Install Meltano 
+
+Option 1.
+```sh
+poetry shell
+poetry install
+meltano install
+```
+
+if you run into error `RuntimeError: 'cryptography' package is required for sha256_password or caching_sha2_password auth methods`
+please execute below command to fix.
+```sh
+source extract_load/.meltano/extractors/tap-mysql/venv/bin/activate
+pip install cryptography
+```
+
+
+Option 2.
 ```sh
 # virtual env
 python3 -m venv meltano-env
@@ -54,9 +76,12 @@ pipx install meltano
 meltano init extract_load
 cd extract_load
 
+
 meltano lock --update --all
 meltano install
+```
 
+```sh
 # rename .env.sample to .env in ./extrac_load and make sure if database variables is correct
 meltano run mydb target-postgres
 # add mydb-transformtion in pipeline to see what's different in warehouse
@@ -65,9 +90,17 @@ meltano run mydb mydb-transformtion target-postgres
 ```
 
 
-## Launch Transformation Process
+## Launch Transformation Process (dbt)
 Here we use dbt tool to process tranformation.
 
+Option 1.
+```sh
+poetry shell
+poetry install
+meltano install
+```
+
+Option 2.
 ```sh
 # virtual env
 python3 -m venv venv-dbt
@@ -85,13 +118,14 @@ pip install dbt-postgres
 # Enter a number: 
 1
 ```
- modify dbt profile for setting database infomation (refer to ./dbt/profiles.yml.sample)
- ```sh
- vi ~/.dbt/profiles.yml
- ```
+ 
+modify dbt profile for setting database infomation (refer to ./dbt/profiles.yml.sample)
+```sh
+vi ~/.dbt/profiles.yml
+```
 
 work on dbt
- ```sh
+```sh
 cd transformation
  
 # make sure if connecton works well
@@ -100,7 +134,7 @@ dbt debug
 
 # install dbt depedencies
 dbt deps
- ```
+```
 
 run dbt to generate models and lineage diagram
 ```sh

@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "extract-load"
+version = "0.1.0"
+description = ""
+authors = ["stone.huang <stone@xrex.io>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "3.9.7"
+meltano = "^3.0.0"
+cryptography = "^41.0.3"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

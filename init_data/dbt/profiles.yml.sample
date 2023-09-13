@@ -5,7 +5,7 @@ transformation:
       type: postgres
       threads: 1
       host: 127.0.0.1
-      port: 5432
+      port: 5410
       user: postgres
       pass: postgres
       dbname: warehouse

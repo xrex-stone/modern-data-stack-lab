@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "transformation"
+version = "0.1.0"
+description = ""
+authors = ["stone.huang <stone@xrex.io>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "3.9.7"
+dbt-postgres = "^1.6.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
