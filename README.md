@@ -159,6 +159,9 @@ dbt snapshot
 5. drop the data and draw a dashboard, finally, it looks like:
 ![Alt text](/images/metabase.png)
 
+If your laptop is Mac m1/m2, you need to use another way to launch metabase.
+refer to https://www.metabase.com/docs/latest/installation-and-operation/running-the-metabase-jar-file
+
 # Appendix
 
 - install meltano : https://docs.meltano.com/guide/installation-guide/
